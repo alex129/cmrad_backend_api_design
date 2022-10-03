@@ -24,6 +24,10 @@ Go to workspace container
 
 `docker compose exec workspace bash`
 
+Initialice composer
+
+`composer install`
+
 Run migrations
 
 `php artisan migrate`

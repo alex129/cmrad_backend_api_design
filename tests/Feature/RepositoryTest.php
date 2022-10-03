@@ -20,7 +20,7 @@ class RepositoryTest extends TestCase
      */
     public function test_store_subject_from_repository_where_repo_doesnt_exist()
     {
-        $response = $this->post('/api/repositories/1/subjects/1');
+        $response = $this->post('/api/repositories/1/subjects');
 
         $response
             ->assertStatus(400)
@@ -33,7 +33,7 @@ class RepositoryTest extends TestCase
     public function test_store_subject_from_repository()
     {
         $this->seed();
-        $response = $this->post('/api/repositories/1/subjects/1');
+        $response = $this->post('/api/repositories/1/subjects');
 
         $response
             ->assertStatus(200)

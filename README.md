@@ -35,3 +35,17 @@ Run seeder
 Testing
 
 `phpunit --testdox`
+
+# Endpoints
+
+Create subject inside repository
+
+POST `http://localhost/api/repositories/1/subjects`
+
+Get list of subjects
+
+GET `http://localhost/api/subjects`
+
+Store Subject into project
+
+POST `http://localhost/api/projects/1/subjects/1`

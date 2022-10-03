@@ -1,5 +1,7 @@
 <?php
 
+use Src\StagingLayer\Subject\Infrastructure\Services\DependencyServiceProvider;
+
 return [
 
     /*
@@ -174,6 +176,12 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        //ROUTE SERVICE PROVIDER
+        Src\StagingLayer\Subject\Infrastructure\Services\RouteServiceProvider::class,
+
+        //SUBJECT DEPENDENCY PROVIDER
+        Src\StagingLayer\Subject\Infrastructure\Services\DependencyServiceProvider::class
 
     ],
 

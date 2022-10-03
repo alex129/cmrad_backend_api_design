@@ -5,5 +5,7 @@ namespace Src\StagingLayer\Subject\Domain\Contracts;
 
 interface SubjectRepositoryContract 
 {
-    public function store($request) : ?object;
+    public function list(): array;
+
+    public function store($request): ?object;
 }

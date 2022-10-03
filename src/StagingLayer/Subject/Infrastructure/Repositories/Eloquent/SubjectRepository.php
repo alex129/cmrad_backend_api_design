@@ -13,6 +13,10 @@ class SubjectRepository implements SubjectRepositoryContract
         $this->model = new Subject;
     }
 
+    public function list(): array
+    {
+        return $this->model->with('projects')->get()->toArray();    
+    }
 
     public function store($request): ?object
     {

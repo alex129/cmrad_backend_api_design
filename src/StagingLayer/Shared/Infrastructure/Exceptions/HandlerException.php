@@ -27,30 +27,12 @@ final class HandlerException extends ExceptionHandler
         'password_confirmation',
     ];
 
-    /**
-     * Report or log an exception.
-     *
-     * @param  \Exception $exception
-     * @return void
-     */
-    public function report(Throwable $exception)
-    {
-        if ($exception instanceof RequestValidationException) {
-            return $exception->toException();
-        } 
-
-        parent::report($exception);
-    }
-
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Exception $exception
-     * @return \Illuminate\Http\Response
-     */
-    public function render($request, Throwable $exception)
-    {
-        return parent::render($request, $exception);
-    }
+   public function register()
+   {
+        $this->renderable(function(Throwable $e){
+            if($e instanceof RequestValidationException){
+                return response()->json($e->toException(), $e->getCode());
+            }
+        });
+   }
 }

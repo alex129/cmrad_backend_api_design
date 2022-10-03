@@ -177,11 +177,17 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        //ROUTE SERVICE PROVIDER
+        /** SUBJECT **/
+        //SUBJECT ROUTE SERVICE PROVIDER
         Src\StagingLayer\Subject\Infrastructure\Services\RouteServiceProvider::class,
-
         //SUBJECT DEPENDENCY PROVIDER
-        Src\StagingLayer\Subject\Infrastructure\Services\DependencyServiceProvider::class
+        Src\StagingLayer\Subject\Infrastructure\Services\DependencyServiceProvider::class,
+
+        /** SUBJECT PROJECTS **/
+        //SUBJECT ROUTE SERVICE PROVIDER
+        Src\StagingLayer\SubjectProjects\Infrastructure\Services\RouteServiceProvider::class,
+        //SUBJECT DEPENDENCY PROVIDER
+        Src\StagingLayer\SubjectProjects\Infrastructure\Services\DependencyServiceProvider::class
 
     ],
 

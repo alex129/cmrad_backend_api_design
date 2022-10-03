@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Refuels\Shared\Infrastructure\Helpers;
+namespace Src\StagingLayer\Shared\Infrastructure\Helpers;
 
 trait StringHelper
 {

@@ -16,6 +16,7 @@ class Subject extends Migration
         if (!Schema::hasTable('subjects')) {
             Schema::create('subjects', function (Blueprint $table) {
                 $table->id();
+                $table->foreignId('repository_id')->nullable()->constrained();
                 $table->timestamps();
             });
         }

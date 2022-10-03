@@ -177,6 +177,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /** REPOSITORIES PROJECTS **/
+        //SUBJECT ROUTE SERVICE PROVIDER
+        Src\StagingLayer\Repository\Infrastructure\Services\RouteServiceProvider::class,
+        //SUBJECT DEPENDENCY PROVIDER
+        Src\StagingLayer\Repository\Infrastructure\Services\DependencyServiceProvider::class,
+
         /** SUBJECT **/
         //SUBJECT ROUTE SERVICE PROVIDER
         Src\StagingLayer\Subject\Infrastructure\Services\RouteServiceProvider::class,

@@ -8,35 +8,32 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class SubjectsTest extends TestCase
+class RepositoryTest extends TestCase
 {
 
     use DatabaseMigrations;
-
-
-    protected $seeder = DatabaseSeeder::class;
 
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function test_store_subject()
+    public function test_store_subject_from_repository_where_repo_doesnt_exist()
     {
-        $response = $this->post('/api/subjects');
+        $response = $this->post('/api/repositories/1/subjects/1');
 
         $response
-            ->assertStatus(200)
+            ->assertStatus(400)
             ->assertJsonStructure([
-                'data',
                 'message',
                 'status_code'
             ]);
     }
 
-    public function test_get_list_subjects()
+    public function test_store_subject_from_repository()
     {
-        $response = $this->get('/api/subjects');
+        $this->seed();
+        $response = $this->post('/api/repositories/1/subjects/1');
 
         $response
             ->assertStatus(200)

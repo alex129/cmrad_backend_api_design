@@ -32,13 +32,13 @@ class SubjectProjectsTest extends TestCase
 
     public function test_asign_project_where_subject_doesnt_exist()
     {
-        $this->seed(ProjectSeeder::class);
+        $this->seed();
         $response = $this->post('/api/projects/1/subjects/1');
 
         $response
             ->assertStatus(400)
             ->assertJson([
-                'message' => 'Something went wrong, maybe the subject doesn\'t exists'
+                'message' => 'Something went wrong, maybe the subject doesn\'t exist'
             ])
             ->assertJsonStructure([
                 'message',
@@ -49,7 +49,7 @@ class SubjectProjectsTest extends TestCase
     public function test_asign_project_to_subject()
     {
         Subject::create();
-        $this->seed(ProjectSeeder::class);
+        $this->seed();
 
         $response = $this->post('/api/projects/1/subjects/1');
 

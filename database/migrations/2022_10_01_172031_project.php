@@ -16,6 +16,7 @@ class Project extends Migration
         if (!Schema::hasTable('projects')) {
             Schema::create('projects', function (Blueprint $table) {
                 $table->id();
+                $table->foreignId('repository_id')->nullable()->constrained();
                 $table->timestamps();
             });
         }

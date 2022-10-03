@@ -32,13 +32,13 @@ Run seeder
 
 `php artisan db:seed --class=ProjectSeeder`
 
-Testing
+Run tests
 
 `phpunit --testdox`
 
 # Endpoints
 
-Create subject inside repository
+Create subject from repository
 
 POST `http://localhost/api/repositories/1/subjects`
 
@@ -46,6 +46,6 @@ Get list of subjects
 
 GET `http://localhost/api/subjects`
 
-Store Subject into project
+Enrolling the subjects in a project
 
 POST `http://localhost/api/projects/1/subjects/1`
